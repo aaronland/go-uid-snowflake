@@ -19,6 +19,11 @@ type UID interface {
 	String() string
 }
 
+func AsInt64(u UID) (int64, bool) {
+	v, ok := u.Value().(int64)
+	return v, ok
+}
+
 var provider_roster roster.Roster
 
 // ProviderInitializationFunc is a function defined by individual provider package and used to create
