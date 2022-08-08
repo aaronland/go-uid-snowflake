@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/aaronland/go-string/random"
+	"log"
 )
 
 const RANDOM_SCHEME string = "random"
@@ -37,4 +38,8 @@ func (pr *RandomProvider) UID(ctx context.Context, args ...interface{}) (UID, er
 	}
 
 	return NewStringUID(ctx, s)
+}
+
+func (pr *RandomProvider) SetLogger(ctx context.Context, logger *log.Logger) error {
+	return nil
 }

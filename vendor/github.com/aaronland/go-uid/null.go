@@ -3,6 +3,7 @@ package uid
 import (
 	"context"
 	"fmt"
+	"log"
 )
 
 const NULL_SCHEME string = "null"
@@ -27,6 +28,10 @@ func NewNullProvider(ctx context.Context, uri string) (Provider, error) {
 
 func (n *NullProvider) UID(ctx context.Context, args ...interface{}) (UID, error) {
 	return NewNullUID(ctx)
+}
+
+func (n *NullProvider) SetLogger(ctx context.Context, logger *log.Logger) error {
+	return nil
 }
 
 func NewNullUID(ctx context.Context) (UID, error) {

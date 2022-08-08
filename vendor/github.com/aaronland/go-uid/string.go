@@ -3,6 +3,7 @@ package uid
 import (
 	"context"
 	"fmt"
+	"log"
 	"net/url"
 )
 
@@ -43,6 +44,10 @@ func NewStringProvider(ctx context.Context, uri string) (Provider, error) {
 	}
 
 	return pr, nil
+}
+
+func (pr *StringProvider) SetLogger(ctx context.Context, logger *log.Logger) error {
+	return nil
 }
 
 func (pr *StringProvider) UID(ctx context.Context, args ...interface{}) (UID, error) {

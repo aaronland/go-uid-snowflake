@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/aaronland/go-uid"
 	"github.com/bwmarrin/snowflake"
+	"log"
 )
 
 const SNOWFLAKE_SCHEME string = "snowflake"
@@ -41,6 +42,10 @@ func NewSnowflakeProvider(ctx context.Context, uri string) (uid.Provider, error)
 
 func (pr *SnowflakeProvider) UID(ctx context.Context, args ...interface{}) (uid.UID, error) {
 	return NewSnowflakeUID(ctx, pr.node)
+}
+
+func (pr *SnowflakeProvider) SetLogger(ctx context.Context, logger *log.Logger) error {
+	return nil
 }
 
 func NewSnowflakeUID(ctx context.Context, args ...interface{}) (uid.UID, error) {
