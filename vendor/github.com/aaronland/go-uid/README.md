@@ -13,3 +13,4 @@ Although the interfaces in this package are nearly stable in advance of a `v1.0.
 ## See also
 
 * https://github.com/aaronland/go-uid-snowflake
+* https://github.com/aaronland/go-uid-proxy

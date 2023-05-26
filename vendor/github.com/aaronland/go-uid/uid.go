@@ -11,7 +11,6 @@ import (
 )
 
 type Provider interface {
-	Open(context.Context, string) error
 	UID(context.Context, ...interface{}) (UID, error)
 	SetLogger(context.Context, *log.Logger) error
 }

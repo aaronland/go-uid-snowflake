@@ -3,7 +3,7 @@ module github.com/aaronland/go-uid-snowflake
 go 1.18
 
 require (
-	github.com/aaronland/go-uid v0.2.0
+	github.com/aaronland/go-uid v0.4.0
 	github.com/bwmarrin/snowflake v0.3.0
 )
 
